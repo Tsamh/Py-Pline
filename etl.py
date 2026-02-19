@@ -24,6 +24,11 @@ def extract():
     df.to_csv('fake_data.csv', index=False)
     return df
 
+def transform(df):
+    df['fullname_name'] = df['first_name'] + '' + df['last_name']
+    df.to_csv('transformed_data.csv', index=False)
+    return df
+
 if __name__ == "__main__":
     df = extract()
     logging.info("Donnees extraits et sauvegardees dans fake_data.csv")
